@@ -23,4 +23,50 @@ export class AppComponent {
     likesCount: 10,
     isLiked: true
   }
+
+  courses = [];
+
+  viewMode = 'something';
+
+  courses2 = [
+    {id : 1, name: 'course1'},
+    {id : 2, name: 'course2'},
+    {id : 3, name: 'course3'}
+  ];
+
+  onAdd(){
+    this.courses2.push({ id: 4, name: 'course4'});
+    console.log("i clicked :/");
+  }
+
+  onRemove(course){
+    let index = this.courses2.indexOf(course);
+    this.courses2.splice(index, 1);
+  }
+  onChange(course){
+    course.name = "UPDATED";
+  }
+
+  courses3;
+
+  loadCourses(){
+    this.courses3 = [
+      {id : 1, name: 'course1'},
+      {id : 2, name: 'course2'},
+      {id : 3, name: 'course3'}
+    ];
+  }
+  trackCourse(index, course){
+     return course ? course.id : undefined;
+  }
+
+  canSave = true;
+
+  task = {
+    title: 'Review applications',
+    assignee: {
+      name: null
+    }
+  }
+
 }
