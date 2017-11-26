@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-course',
+  selector: 'course-form',
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.css']
 })
-export class CourseComponent implements OnInit {
+export class CourseComponent {
+  categoryList = [
+    {id: 1, name: "Development"},
+    {id: 2, name: "Art"},
+    {id: 3, name: "Languages"}
+  ];
 
-  constructor() { }
-
-  ngOnInit() {
+  log(x){
+    console.log(x);
   }
-
+  
 }
