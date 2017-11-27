@@ -20,6 +20,10 @@ import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
 import { CourseFormComponent } from './course-form/course-form.component';
 import { PostsComponent } from './posts/posts.component';
+import { ErrorHandler } from '@angular/core';
+import { AppErrorHandler } from './common/validators/app-error-handler';
+import { FollowersComponent } from './followers/followers.component';
+import { FollowersService } from './services/followers.service';
 
 
 
@@ -38,7 +42,8 @@ import { PostsComponent } from './posts/posts.component';
     ZippyComponent,
     ContactFormComponent,
     CourseFormComponent,
-    PostsComponent
+    PostsComponent,
+    FollowersComponent
     
   ],
   imports: [
@@ -47,9 +52,11 @@ import { PostsComponent } from './posts/posts.component';
     HttpModule
   ],
   providers: [
+    FollowersService,
     PostService,
     CoursesService,
-    AuthorsListService
+    AuthorsListService,
+    { provide: ErrorHandler, useClass: AppErrorHandler}
   ],
   bootstrap: [AppComponent]
 })
