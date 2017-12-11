@@ -7,6 +7,4 @@ export class EmailService {
     getAuthors(){
       return ["Adam Mickiewicz", "Juliusz Słowacki", "TOLKIEN"];
     }
-  
-
 }
